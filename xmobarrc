@@ -2,8 +2,8 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:antialias=true"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB
-       , bgColor = "black"
-       , fgColor = "grey"
+       , bgColor = "#002b36"
+       , fgColor = "#839496"
        , alpha = 255
        , position = Top
        , textOffset = -1
@@ -16,23 +16,23 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:antialias=true"
        , allDesktops = True
        , overrideRedirect = True
        , commands = [Run Cpu ["-L","3","-H","50",
-                               "--normal","green","--high","red"] 10
+                               "--normal","#859900","--high","#dc322f"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Battery        [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+                             , "--low"      , "#dc322f"
+                             , "--normal"   , "#cb4b16"
+                             , "--high"     , "#859900"
 
                              , "--" -- battery specific options
                                        -- discharging status
                                        , "-o"	, "<left>% (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                       , "-O"	, "<fc=#b58900>Charging</fc>"
                                        -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
+                                       , "-i"	, "<fc=#2aa198>Charged</fc>"
                              ] 50
                     , Run Date "%a %b %_d %Y %I:%M:%S" "date" 10
 		    , Run StdinReader
@@ -40,5 +40,5 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:antialias=true"
        , sepChar = "%"
        , alignSep = "}{"
        , template = " %StdinReader% }{ %cpu% | %memory% * %swap% |\
-                    \ %battery% <fc=#ee9a00>%date%</fc>|"
+                    \ %battery% <fc=#b58900>%date%</fc>|"
        }
