@@ -22,9 +22,9 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=9:antialias=true"
                     , Run Battery        [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "#dc322f"
-                             , "--normal"   , "#cb4b16"
-                             , "--high"     , "#859900"
+                             , "--low"      , "#dc322f"   -- solarized red
+                             , "--normal"   , "#b58900"   -- solarized yellow
+                             , "--high"     , "#859900"   -- solarized green
 
                              , "--" -- battery specific options
                                        -- discharging status
